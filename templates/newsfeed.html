@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link href="{% static "bootstrap/css/bootstrap.css" %}" rel="stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="{% static "/stylesheet.css" %}">
+    </head>
+    <body class="container">
+        <div>
+            {% for schnap in schnapps  %}
+            <div class="thumbnail">
+                <h4>{{ schnap.sender }} </h4>
+                <p> „{{ schnap.description}}“</p>
+                <img src="{{ schnap.image.url}}" class="img-responsive">
+                <p class="text-right">{{ schnap.sent_at }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>
